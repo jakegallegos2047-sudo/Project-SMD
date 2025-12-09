@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Watchlist</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+body {
+    background: #111213;
+    color: #e6e6e6;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+.hero {
+    font-size: 3rem;
+    text-align: center;
+    color: #0fac79;
+    margin-bottom: 40px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.glow-button {
+    display: inline-block;
+    width: 220px;
+    text-align: center;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #111213;
+    background: #0fac79;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(15,163,121,0.3);
+}
+
+.glow-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(15,163,121,0.5);
+}
+
+.glow-button.danger {
+    background: #ff4c4c;
+    box-shadow: 0 4px 15px rgba(255,76,76,0.3);
+}
+
+.glow-button.danger:hover {
+    box-shadow: 0 8px 25px rgba(255,76,76,0.5);
+    transform: translateY(-3px);
+}
+
+.floating-card {
+    background: #1c1d1e;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(15,163,121,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15,163,121,0.5);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+</style>
+</head>
+<body>
+<header class="main-header">
+    <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="create.html" class="nav-link">Add Movie</a>
+        <a href="retrieve.html" class="nav-link">View Movies</a>
+        <a href="update.html" class="nav-link">Update Movie</a>
+        <a href="delete.html" class="nav-link">Delete Movie</a>
+    </nav>
+</header>
+
+<style>
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1c1d1e;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(15,163,121,0.3);
+    z-index: 1000;
+}
+
+.main-header nav {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-link {
+    color: #0fac79;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: #0fac79;
+    color: #111213;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15,163,121,0.5);
+}
+
+body {
+    padding-top: 70px;
+}
+</style>
+
+<div class="hero">Movie Watchlist</div>
+
+<div class="container">
+    <div class="floating-card">
+        <a href="create.html" class="glow-button">Add Movie</a>
+        <a href="retrieve.html" class="glow-button">View Movies</a>
+        <a href="update.html" class="glow-button">Update Movie</a>
+        <a href="delete.html" class="glow-button danger">Delete Movie</a>
+    </div>
+</div>
+
+</body>
+</html>

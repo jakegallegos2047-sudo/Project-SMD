@@ -1,0 +1,12 @@
+[
+  { "movieid": 1, "title": "Inception", "description": "Mind-bending thriller", "date": { "$date": "2022-01-01T00:00:00Z" } },
+  { "movieid": 2, "title": "Interstellar", "description": "Space exploration epic", "date": { "$date": "2022-02-15T00:00:00Z" } },
+  { "movieid": 3, "title": "The Matrix", "description": "Sci-fi classic", "date": { "$date": "2022-03-05T00:00:00Z" } },
+  { "movieid": 4, "title": "Spirited Away", "description": "Animated adventure", "date": { "$date": "2022-04-20T00:00:00Z" } },
+  { "movieid": 5, "title": "The Dark Knight", "description": "Batman crime thriller", "date": { "$date": "2022-05-12T00:00:00Z" } },
+  { "movieid": 6, "title": "Parasite", "description": "Thriller/Satire", "date": { "$date": "2022-06-01T00:00:00Z" } },
+  { "movieid": 7, "title": "Avengers: Endgame", "description": "Superhero epic finale", "date": { "$date": "2022-07-20T00:00:00Z" } },
+  { "movieid": 8, "title": "Joker", "description": "Psychological thriller", "date": { "$date": "2022-08-15T00:00:00Z" } },
+  { "movieid": 9, "title": "Coco", "description": "Animated adventure about family and music", "date": { "$date": "2022-09-10T00:00:00Z" } },
+  { "movieid": 10, "title": "The Lord of the Rings: Fellowship of the Ring", "description": "Epic fantasy adventure", "date": { "$date": "2022-10-05T00:00:00Z" } }
+]

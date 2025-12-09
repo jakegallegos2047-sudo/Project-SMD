@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Movies</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+body {
+    background: #111213;
+    color: #e6e6e6;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+.hero {
+    font-size: 2.8rem;
+    text-align: center;
+    color: #0fac79;
+    margin-bottom: 30px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.movie-card {
+    background: #1c1d1e;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(15, 163, 121, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15, 163, 121, 0.5);
+}
+
+.movie-card h3 {
+    margin: 0 0 10px 0;
+    color: #0fac79;
+}
+
+.movie-card p {
+    margin: 5px 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+</style>
+</head>
+<body>
+<header class="main-header">
+    <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="create.html" class="nav-link">Add Movie</a>
+        <a href="retrieve.html" class="nav-link">View Movies</a>
+        <a href="update.html" class="nav-link">Update Movie</a>
+        <a href="delete.html" class="nav-link">Delete Movie</a>
+    </nav>
+</header>
+
+<style>
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1c1d1e;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(15,163,121,0.3);
+    z-index: 1000;
+}
+
+.main-header nav {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-link {
+    color: #0fac79;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: #0fac79;
+    color: #111213;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15,163,121,0.5);
+}
+
+body {
+    padding-top: 70px;
+}
+</style>
+
+<div class="hero">Movie Watchlist</div>
+
+<div class="container" id="movies">
+</div>
+
+<script>
+async function loadMovies() {
+    try {
+        const res = await fetch("/movies");
+        const movies = await res.json();
+        const container = document.getElementById("movies");
+        container.innerHTML = "";
+
+        movies.forEach(movie => {
+            const card = document.createElement("div");
+            card.className = "movie-card";
+            card.innerHTML = `
+                <h3>${movie.title}</h3>
+                <p>${movie.description}</p>
+                <p><strong>Date:</strong> ${new Date(movie.date).toLocaleDateString()}</p>
+            `;
+            container.appendChild(card);
+        });
+    } catch (err) {
+        console.error("Error loading movies:", err);
+    }
+}
+
+window.onload = loadMovies;
+</script>
+
+</body>
+</html>
